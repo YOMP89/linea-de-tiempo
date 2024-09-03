@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Línea de Tiempo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .timeline-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 600px;
+        }
+
+        .timeline {
+            position: relative;
+            padding: 0;
+            list-style: none;
+        }
+
+        .timeline li {
+            position: relative;
+            margin: 20px 0;
+        }
+
+        .timeline li::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 10px;
+            width: 2px;
+            height: 100%;
+            background-color: #ddd;
+        }
+
+        .timeline li:last-child::before {
+            height: 50%;
+        }
+
+        .timeline li .date {
+            position: absolute;
+            top: 0;
+            left: -80px;
+            width: 70px;
+            text-align: right;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .timeline li .content {
+            margin-left: 30px;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .timeline li .content:hover {
+            background-color: #e0e0e0;
+        }
+
+        .timeline li .content p {
+            margin: 0;
+            padding: 0;
+            display: none;
+            transition: max-height 0.3s ease;
+            overflow: hidden;
+        }
+
+        .timeline li.active .content p {
+            display: block;
+            padding-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="timeline-container">
+        <ul class="timeline">
+            <li>
+                <div class="date">2024</div>
+                <div class="content">
+                    <h3>Punto 1</h3>
+                    <p>Descripción del evento en 2024.</p>
+                </div>
+            </li>
+            <li>
+                <div class="date">2023</div>
+                <div class="content">
+                    <h3>Punto 2</h3>
+                    <p>Descripción del evento en 2023.</p>
+                </div>
+            </li>
+            <li>
+                <div class="date">2022</div>
+                <div class="content">
+                    <h3>Punto 3</h3>
+                    <p>Descripción del evento en 2022.</p>
+                </div>
+            </li>
+            <li>
+                <div class="date">2021</div>
+                <div class="content">
+                    <h3>Punto 4</h3>
+                    <p>Descripción del evento en 2021.</p>
+                </div>
+            </li>
+            <li>
+                <div class="date">2020</div>
+                <div class="content">
+                    <h3>Punto 5</h3>
+                    <p>Descripción del evento en 2020.</p>
+                </div>
+            </li>
+            <li>
+                <div class="date">2019</div>
+                <div class="content">
+                    <h3>Punto 6</h3>
+                    <p>Descripción del evento en 2019.</p>
+                </div>
+            </li>
+            <li>
+                <div class="date">2018</div>
+                <div class="content">
+                    <h3>Punto 7</h3>
+                    <p>Descripción del evento en 2018.</p>
+                </div>
+            </li>
+            <li>
+                <div class="date">2017</div>
+                <div class="content">
+                    <h3>Punto 8</h3>
+                    <p>Descripción del evento en 2017.</p>
+                </div>
+            </li>
+            <li>
+                <div class="date">2016</div>
+                <div class="content">
+                    <h3>Punto 9</h3>
+                    <p>Descripción del evento en 2016.</p>
+                </div>
+            </li>
+            <li>
+                <div class="date">2015</div>
+                <div class="content">
+                    <h3>Punto 10</h3>
+                    <p>Descripción del evento en 2015.</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        const items = document.querySelectorAll('.timeline li .content');
+
+        items.forEach(item => {
+            item.addEventListener('click', () => {
+                item.parentElement.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>
